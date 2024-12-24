@@ -45,6 +45,7 @@ body {
     backface-visibility: hidden; /* Improve 3D rendering */
     box-sizing: border-box;
     padding-bottom: 50px;
+    pointer-events: none;
 }
 
 .month {
