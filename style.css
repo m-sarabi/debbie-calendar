@@ -1,0 +1,220 @@
+:root {
+    --month-width: 165px;
+    --month-height: 340px;
+    --month-gap: 2px;
+    --month-translate-y: -10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /*background-color: #f8e7c5;*/
+    background:
+            radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 3px, #f6e5c5 4px, rgba(96, 16, 48, 0) 5px) 0 4px,
+            linear-gradient(63deg, #f5e4c5 1px, rgba(96, 16, 48, 0) 4px) 4px 4px,
+            #f8e7c5;
+    background-size: 8px 8px;
+    font-family: Arial, sans-serif;
+}
+
+.calendar-container {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.month-container {
+    position: absolute;
+    width: var(--month-width);
+    height: var(--month-height);
+    display: flex;
+    transform-origin: 50% 100%;
+    backface-visibility: hidden; /* Improve 3D rendering */
+    box-sizing: border-box;
+    padding-bottom: 50px;
+}
+
+.month {
+    width: 100%;
+    height: 100%;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 100px 20px 0;
+    /*justify-content: center;*/
+    align-items: center;
+    text-align: center;
+    transform: perspective(200px) rotateX(-20deg);
+}
+
+.month:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(0.8, 1.55) translate(0, 47px);
+    background: url("assets/leaf.svg");
+    background-size: 100% 100%;
+}
+
+.days {
+    font-size: 10px;
+    text-align: center;
+    /*font-weight: normal;*/
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--month-gap);
+    transform: scale(0.9, 1.4) translate(0, 10px);
+}
+
+.day {
+    cursor: pointer;
+    padding: 0 1px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    user-select: none;
+}
+
+.dummy-day {
+    visibility: hidden;
+}
+
+.current-day {
+    background-color: #f80;
+    color: #000;
+}
+
+.day-name-container {
+    z-index: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+    width: 20px;
+    height: 1px;
+    font-size: 12px;
+}
+
+.day-name-container .day-name {
+    position: absolute;
+    transform-origin: center 190px;
+    top:50%;
+    color: #fff;
+    text-shadow: 0 0 2px #000;
+}
+
+.day-name-container .day-name:nth-child(1) {
+    transform: translateY(-50%) rotate(-12deg);
+}
+
+.day-name-container .day-name:nth-child(2) {
+    transform: translateY(-50%) rotate(-8deg);
+}
+
+.day-name-container .day-name:nth-child(3) {
+    transform: translateY(-50%) rotate(-4deg);
+}
+
+.day-name-container .day-name:nth-child(4) {
+    transform: translateY(-50%) rotate(0deg);
+}
+
+.day-name-container .day-name:nth-child(5) {
+    transform: translateY(-50%) rotate(4deg);
+}
+
+.day-name-container .day-name:nth-child(6) {
+    transform: translateY(-50%) rotate(8deg);
+}
+
+.day-name-container .day-name:nth-child(7) {
+    transform: translateY(-50%) rotate(12deg);
+}
+
+.day-name-container .day-name {
+    font-family: Consolas, sans-serif;
+    width: 13px;
+}
+
+.day-name span {
+    display: inline-block;
+    transform-origin: center center;
+    transform: rotate(90deg);
+}
+
+.month-container:nth-child(2) .day-name span,
+.month-container:nth-child(3) .day-name span,
+.month-container:nth-child(4) .day-name span,
+.month-container:nth-child(5) .day-name span,
+.month-container:nth-child(6) .day-name span
+{
+    transform: rotate(-90deg);
+}
+
+.month-container:nth-child(5) .day,
+.month-container:nth-child(6) .day,
+.month-container:nth-child(7) .day,
+.month-container:nth-child(8) .day,
+.month-container:nth-child(9) .day
+{
+    transform: rotate(180deg);
+}
+
+.month-container:nth-child(5) .month-name,
+.month-container:nth-child(6) .month-name,
+.month-container:nth-child(7) .month-name,
+.month-container:nth-child(8) .month-name,
+.month-container:nth-child(9) .month-name
+{
+    transform: rotate(180deg);
+}
+
+.month-name {
+    display: inline-block;
+    transform: rotate(0deg);
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px #fff;
+}
+
+/* Center Sun-Like Face */
+.center-face {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 160px;
+    background: #ff0;
+    border-radius: 50%;
+    /*color: #fff;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+}
+
+.year {
+    user-select: none;
+    cursor: pointer;
+}

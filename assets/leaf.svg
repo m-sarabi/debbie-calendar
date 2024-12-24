@@ -1,0 +1,27 @@
+<svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="-1 0 36 72"
+        preserveAspectRatio="none"
+>
+    <!-- Leaf -->
+    <!--            d="M50 10 Q70 40 50 90 Q30 40 50 10 Z"-->
+    <!--    d="M 32 80 Q 44 64 48 48 Q 50 40 44 28 Q 40 20 36 16 Q 32 12 32 8 Q 32 12 28 16 Q 24 20 20 28 Q 14 40 16 48 Q 20 64 32 80"-->
+    <path
+            id="leaf"
+            d="M 23 72 Q 31 56 34 40 Q 36 27 29 19 Q 26 16 23 12 Q 20 9 22 0 Q 16 9 13 12 Q 8 16 5 19 Q -2 27 0 40 Q 3 56 11 72"
+            fill="#87AE00"
+            stroke="darkgreen"
+            stroke-width="0.5"
+    >
+        <animate
+                attributeName="d"
+                dur="2s"
+                repeatCount="indefinite"
+                values="
+                    M 23 72 Q 31 56 34 40 Q 36 27 29 19 Q 26 16 23 12 Q 20 9 22 0 Q 16 9 13 12 Q 8 16 5 19 Q -2 27 0 40 Q 3 56 11 72;
+                    M 23 72 Q 31 56 34 40 Q 36 27 29 19 Q 26 16 21 12 Q 18 9 12 0 Q 14 9 11 12 Q 8 16 5 19 Q -2 27 0 40 Q 3 56 11 72;
+                    M 23 72 Q 31 56 34 40 Q 36 27 29 19 Q 26 16 23 12 Q 20 9 22 0 Q 16 9 13 12 Q 8 16 5 19 Q -2 27 0 40 Q 3 56 11 72"
+        />
+    </path>
+
+</svg>
