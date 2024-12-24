@@ -212,8 +212,8 @@ body {
     width: 160px;
     height: 160px;
     background: #ff0;
+    box-shadow: 0 0 8px #000 inset, 0 0 4px #000;
     border-radius: 50%;
-    /*color: #fff;*/
     display: flex;
     justify-content: center;
     align-items: center;
