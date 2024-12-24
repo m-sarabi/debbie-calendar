@@ -89,11 +89,16 @@ body {
 .day {
     cursor: pointer;
     padding: 0 1px;
-    border-radius: 50%;
+    border-radius: 5px;
     border: 1px solid #ccc;
     background-color: #fff;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: all 0.2s ease;
+    pointer-events: auto;
     user-select: none;
+}
+
+.day:hover {
+    border: 1px solid #000;
 }
 
 .dummy-day {
